@@ -2,9 +2,9 @@ import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 
 const images = [
-  "/minimal-architecture-portfolio-with-clean-lines.jpg",
-  "/fashion-photography-editorial-black-and-white.jpg",
-  "/modern-ui-design-portfolio-mockup.jpg",
+  "https://cdn.poehali.dev/projects/10994ea3-35c7-4488-995e-39b9a4ac9aae/files/3450de3e-3785-4cb3-bde1-9371f6dd835c.jpg",
+  "https://cdn.poehali.dev/projects/10994ea3-35c7-4488-995e-39b9a4ac9aae/files/fd83b552-bb50-4f45-a712-c6385c04ffb1.jpg",
+  "https://cdn.poehali.dev/projects/10994ea3-35c7-4488-995e-39b9a4ac9aae/files/f63d5100-fc71-431f-95c4-cd3f0351cf18.jpg",
 ]
 
 export function HeroSection() {
@@ -26,7 +26,6 @@ export function HeroSection() {
       ref={containerRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background px-6 py-24"
     >
-      {/* Stacked images */}
       <div className="relative flex items-center justify-center">
         <motion.div
           className="absolute w-[280px] md:w-[320px] aspect-[3/4] rounded-xl overflow-hidden shadow-2xl"
@@ -37,7 +36,7 @@ export function HeroSection() {
         >
           <img
             src={images[0] || "/placeholder.svg"}
-            alt="Портфолио 1"
+            alt="Кольца"
             className="w-full h-full object-cover"
           />
         </motion.div>
@@ -51,7 +50,7 @@ export function HeroSection() {
         >
           <img
             src={images[1] || "/placeholder.svg"}
-            alt="Портфолио 2"
+            alt="Жених и невеста"
             className="w-full h-full object-cover"
           />
         </motion.div>
@@ -65,7 +64,7 @@ export function HeroSection() {
         >
           <img
             src={images[2] || "/placeholder.svg"}
-            alt="Портфолио 3"
+            alt="Украшение"
             className="w-full h-full object-cover"
           />
         </motion.div>
@@ -78,7 +77,7 @@ export function HeroSection() {
         transition={{ duration: 1, delay: 0.8 }}
       >
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-center text-foreground mix-blend-difference">
-          Ваши работы, <em className="italic">в фокусе</em>.
+          Анна & Дмитрий, <em className="italic">мы женимся</em>.
         </h1>
       </motion.div>
 

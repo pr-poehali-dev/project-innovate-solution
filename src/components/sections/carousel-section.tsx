@@ -1,17 +1,13 @@
 import { motion } from "framer-motion"
 
-const portfolioItems = [
-  "/portfolio-website-design-preview-modern.jpg",
-  "/photography-portfolio-website-clean.jpg",
-  "/architecture-firm-website-minimal.jpg",
-  "/design-agency-portfolio-dark-theme.jpg",
-  "/artist-portfolio-website-creative.jpg",
-  "/writer-portfolio-website-elegant.jpg",
+const weddingWords = [
+  "Любовь", "Счастье", "Верность", "Нежность",
+  "Радость", "Навсегда", "Доверие", "Вместе",
+  "Семья", "Мечта", "Тепло", "Harmony",
 ]
 
 export function CarouselSection() {
-  // Duplicate for seamless loop
-  const items = [...portfolioItems, ...portfolioItems]
+  const items = [...weddingWords, ...weddingWords]
 
   return (
     <section className="bg-primary py-24 overflow-hidden">
@@ -22,13 +18,13 @@ export function CarouselSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Создано авторами для авторов.
+          Создано с любовью — для вас.
         </motion.h2>
       </div>
 
       <div className="relative">
         <motion.div
-          className="flex gap-6"
+          className="flex gap-8 items-center"
           animate={{ x: [0, "-50%"] }}
           transition={{
             duration: 30,
@@ -36,17 +32,16 @@ export function CarouselSection() {
             ease: "linear",
           }}
         >
-          {items.map((src, i) => (
+          {items.map((word, i) => (
             <div
               key={i}
-              className="flex-shrink-0 w-[300px] md:w-[400px] rounded-xl overflow-hidden shadow-2xl"
+              className="flex-shrink-0 flex items-center gap-8"
               data-clickable
             >
-              <img
-                src={src || "/placeholder.svg"}
-                alt={`Пример портфолио ${(i % portfolioItems.length) + 1}`}
-                className="w-full h-auto"
-              />
+              <span className="font-serif text-3xl md:text-4xl text-primary-foreground/90 whitespace-nowrap">
+                {word}
+              </span>
+              <span className="text-primary-foreground/40 text-2xl">✦</span>
             </div>
           ))}
         </motion.div>

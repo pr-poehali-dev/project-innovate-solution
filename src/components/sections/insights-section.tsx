@@ -3,26 +3,26 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 
-const articles = [
+const timeline = [
   {
-    title: "Искусство визуального сторителлинга",
-    category: "Дизайн",
-    image: "/visual-storytelling-design-article.jpg",
+    title: "Церемония бракосочетания",
+    category: "14:00 — Загс",
+    image: "https://cdn.poehali.dev/projects/10994ea3-35c7-4488-995e-39b9a4ac9aae/files/fd83b552-bb50-4f45-a712-c6385c04ffb1.jpg",
   },
   {
-    title: "Как создать личный бренд онлайн",
-    category: "Стратегия",
-    image: "/personal-branding-digital-marketing.jpg",
+    title: "Фотосессия в саду",
+    category: "15:30 — Парк Сокольники",
+    image: "https://cdn.poehali.dev/projects/10994ea3-35c7-4488-995e-39b9a4ac9aae/files/3450de3e-3785-4cb3-bde1-9371f6dd835c.jpg",
   },
   {
-    title: "Тренды типографики 2025",
-    category: "Типографика",
-    image: "/typography-trends-modern-fonts.jpg",
+    title: "Банкет и торжество",
+    category: "17:00 — Ресторан «Белый зал»",
+    image: "https://cdn.poehali.dev/projects/10994ea3-35c7-4488-995e-39b9a4ac9aae/files/f63d5100-fc71-431f-95c4-cd3f0351cf18.jpg",
   },
   {
-    title: "Минимализм в дизайне портфолио",
-    category: "Вдохновение",
-    image: "/placeholder.svg?height=200&width=300",
+    title: "Первый танец молодожёнов",
+    category: "20:00 — Живая музыка",
+    image: "https://cdn.poehali.dev/projects/10994ea3-35c7-4488-995e-39b9a4ac9aae/files/fd83b552-bb50-4f45-a712-c6385c04ffb1.jpg",
   },
 ]
 
@@ -43,11 +43,11 @@ export function InsightsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Статьи
+          Программа дня
         </motion.p>
 
         <div className="divide-y divide-border">
-          {articles.map((article, i) => (
+          {timeline.map((item, i) => (
             <motion.a
               key={i}
               href="#"
@@ -62,9 +62,9 @@ export function InsightsSection() {
               data-clickable
             >
               <div className="flex-1">
-                <span className="text-xs text-muted-foreground uppercase tracking-wider">{article.category}</span>
+                <span className="text-xs text-muted-foreground uppercase tracking-wider">{item.category}</span>
                 <h3 className="font-serif text-xl md:text-2xl text-foreground mt-1 group-hover:text-primary transition-colors">
-                  {article.title}
+                  {item.title}
                 </h3>
               </div>
               <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
@@ -72,7 +72,6 @@ export function InsightsSection() {
           ))}
         </div>
 
-        {/* Floating hover image */}
         <AnimatePresence>
           {hoveredIndex !== null && (
             <motion.div
@@ -88,8 +87,8 @@ export function InsightsSection() {
               transition={{ duration: 0.2 }}
             >
               <img
-                src={articles[hoveredIndex].image || "/placeholder.svg"}
-                alt={articles[hoveredIndex].title}
+                src={timeline[hoveredIndex].image || "/placeholder.svg"}
+                alt={timeline[hoveredIndex].title}
                 className="w-full h-auto"
               />
             </motion.div>
